@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header>
+        <eb:MessageHeader xmlns:eb="http://www.ebxml.org/namespaces/messageHeader" eb:version="1.0"
+                          soap-env:mustUnderstand="1">
+            <eb:From>
+                <eb:PartyId eb:type="URI">123123</eb:PartyId>
+            </eb:From>
+            <eb:To>
+                <eb:PartyId eb:type="URI">999999</eb:PartyId>
+            </eb:To>
+            <eb:CPAId>FF9A</eb:CPAId>
+            <eb:ConversationId>webservices.support@sabre.com</eb:ConversationId>
+            <eb:Service eb:type="OTA">SessionValidateRQ</eb:Service>
+            <eb:Action>ErrorRS</eb:Action>
+            <eb:MessageData>
+                <eb:MessageId>ff2b2822-2340-425c-9738-bcf0f3b71e40@176</eb:MessageId>
+                <eb:Timestamp>2014-10-05T19:42:09</eb:Timestamp>
+                <eb:RefToMessageId>1000</eb:RefToMessageId>
+            </eb:MessageData>
+        </eb:MessageHeader>
+        <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext"/>
+    </soap-env:Header>
+    <soap-env:Body>
+        <soap-env:Fault>
+            <faultcode>soap-env:Client.InvalidSecurityToken</faultcode>
+            <faultstring>Invalid or Expired binary security token: null</faultstring>
+            <detail>
+                <StackTrace>com.sabre.universalservices.base.security.AuthenticationException:
+                    errors.session.USG_INVALID_SECURITY_TOKEN
+                </StackTrace>
+            </detail>
+        </soap-env:Fault>
+    </soap-env:Body>
+</soap-env:Envelope>

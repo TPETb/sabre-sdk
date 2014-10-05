@@ -1,0 +1,19 @@
+<?php
+namespace Sabre\Sender;
+
+use Sabre\DTO\VoidTicketsRequest\VoidTicketsRequest;
+
+class VoidTicketsSender extends SenderAbstract implements SenderInterface
+{
+    const RESPONSE_DTO = 'Sabre\DTO\VoidTicketsResponse\VoidTicketsResponse';
+
+    public function sendRequest(VoidTicketsRequest $request)
+    {
+        return $this->doSendRequest($request);
+    }
+
+    protected function getResponseDtoClassname()
+    {
+        return self::RESPONSE_DTO;
+    }
+}
